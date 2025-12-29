@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenTranslate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+
+<div class="layout">
+
+  <aside class="slang-list">
+    <h3>Available Slang</h3>
+    <ul id="slangList"></ul>
+  </aside>
+
+  <main class="app">
+    <h1>GenTranslate</h1>
+    <p class="subtitle">Translate Gen Z & Alpha slang into clear language</p>
+
+    <input
+      type="text"
+      id="slangInput"
+      placeholder="Enter slang (e.g. rizz)"
+    />
+
+    <button onclick="translateSlang()">Translate</button>
+
+    <div id="result"></div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+<a
+  href="https://discord.com/users/1084151267527507988"
+  target="_blank"
+  class="discord-link"
+>
+  💬 Discord
+</a>
+
+<a
+  href="https://forms.gle/kPGR7ZmFweHMUm9G9"
+  target="_blank"
+  class="suggest-link"
+>
+  ➕ Suggest Slang
+</a>
+
+<div class="credit">
+  Made by 0psc8r
+</div>
+
+</body>
+</html>
