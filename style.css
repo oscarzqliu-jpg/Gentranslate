@@ -1,51 +1,38 @@
-/* ===== BASE ===== */
 * {
   box-sizing: border-box;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 body {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  background: #f7f7f7;
-  color: #1f2937;
   margin: 0;
-  padding: 0;
+  background: #f2f2f2;
+  color: #222;
 }
 
-/* ===== MODE TOGGLE ===== */
-.mode-toggle {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  background: #111827;
-  color: white;
-  font-size: 14px;
+body.dark {
+  background: #0f1117;
+  color: #eaeaea;
 }
 
-/* ===== LAYOUT ===== */
 .layout {
   display: flex;
-  max-width: 1000px;
-  margin: 80px auto;
-  gap: 28px;
-  padding: 0 16px;
+  height: 100vh;
 }
 
-/* ===== SLANG SIDEBAR ===== */
 .slang-list {
-  width: 220px;
-  background: #e5e7eb;
-  padding: 16px;
-  border-radius: 14px;
+  width: 260px;
+  background: #e6e6e6;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+body.dark .slang-list {
+  background: #1a1d29;
 }
 
 .slang-list h3 {
-  margin: 0 0 14px;
+  margin-top: 0;
   text-align: center;
-  font-size: 16px;
 }
 
 .slang-list ul {
@@ -55,138 +42,104 @@ body {
 }
 
 .slang-list li {
-  background: #d1d5db;
   padding: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  background: #ffffff;
   border-radius: 10px;
-  text-align: center;
-  font-size: 14px;
+  cursor: pointer;
 }
 
-/* ===== MAIN APP ===== */
+body.dark .slang-list li {
+  background: #2a2f45;
+}
+
+.slang-list li:hover {
+  opacity: 0.8;
+}
+
 .app {
   flex: 1;
-  background: white;
-  padding: 32px;
-  border-radius: 18px;
-}
-
-.app h1 {
-  margin-top: 0;
+  padding: 40px;
+  text-align: center;
 }
 
 .subtitle {
-  color: #6b7280;
-  margin-bottom: 24px;
+  opacity: 0.8;
 }
 
-/* ===== INPUTS ===== */
 input {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 14px;
-  font-size: 16px;
-  border-radius: 14px;
-  border: 1px solid #d1d5db;
+  width: 60%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 20px;
 }
 
 button {
   padding: 12px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 14px;
+  border-radius: 20px;
   border: none;
-  background: #111827;
-  color: white;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 #result {
-  margin-top: 24px;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #ffffff;
 }
 
-/* ===== DARK MODE ===== */
-body.dark {
-  background: #020617;
-  color: #e5e7eb;
+body.dark #result {
+  background: #1f2333;
 }
 
-body.dark .mode-toggle {
-  background: #2563eb;
-}
-
-body.dark .app {
-  background: #0b1220;
-}
-
-body.dark .slang-list {
-  background: #0e1628;
-}
-
-body.dark .slang-list li {
-  background: #1e293b;
-  color: #e5e7eb;
-}
-
-body.dark input {
-  background: #020617;
-  color: #e5e7eb;
-  border: 1px solid #334155;
-}
-
-body.dark button {
-  background: #2563eb;
-}
-
-body.dark .subtitle {
-  color: #9ca3af;
-}
-
-.discord-link {
+.mode-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #5865F2;
-  color: white;
-  padding: 16px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
+  top: 15px;
+  right: 15px;
 }
 
-.discord-link:hover {
-  opacity: 0.85;
-}
-
+.discord-link,
 .suggest-link {
   position: fixed;
   bottom: 20px;
-  left: 20px;
-  background: #22c55e;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: #5865F2;
   color: white;
-  padding: 16px 22px;
-  border-radius: 999px;
   text-decoration: none;
-  font-size: 18px;
   font-weight: bold;
 }
 
-.suggest-link:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
+.suggest-link {
+  left: 20px;
+  background: #34a853;
+}
+
+.discord-link {
+  right: 20px;
 }
 
 .credit {
   position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 13px;
-  color: #6b7280;
-  opacity: 0.8;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
-body.dark .credit {
-  color: #9ca3af;
+/* Scrollbar styling */
+.slang-list::-webkit-scrollbar {
+  width: 8px;
 }
-  
+
+.slang-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+body.dark .slang-list::-webkit-scrollbar-thumb {
+  background: #555;
+}
